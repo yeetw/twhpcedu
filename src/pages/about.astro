@@ -12,130 +12,139 @@ import Section from '../components/Section.astro';
   <main>
     <PageHero 
       title="關於我們"
-      subtitle="台灣高效能運算教育協會致力於推動高效能運算技術發展與人才培育"
+      subtitle="致力於推進台灣高效能運算和 IC 設計教育"
     />
 
     <Section background="white">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-dark-800 mb-8 text-center">我們的使命</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 class="text-2xl font-semibold text-dark-800 mb-4">推動技術發展</h3>
-            <p class="text-dark-700 mb-6 leading-relaxed">
-              致力於推廣高效能運算技術在台灣的發展與應用，透過教育培訓、研究合作與產業連結，
-              培育具備國際競爭力的高效能運算人才。
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-primary mb-8 text-center">台灣高效能運算教育協會</h2>
+        <div class="text-center mb-12">
+          <p class="text-xl text-brand-secondary leading-relaxed">
+            致力於推進台灣高效能運算和 IC 設計教育
+          </p>
+        </div>
+        
+        <div class="mb-16">
+          <h3 class="text-2xl font-semibold text-brand-primary mb-6 text-center">我們的願景與目標</h3>
+          <div class="bg-brand-light p-8 rounded-xl">
+            <p class="text-brand-secondary leading-relaxed mb-6">
+              台灣高效能運算教育協會（TWHPCEdu, Taiwan High Performance Computing Education Association） 
+              是一個致力於推動科技教育創新與人才培育的非營利平台。匯集來自學界、產業與開源社群的專業力量，
+              致力於打造一個打破學用落差、強調實作與創新思維的學習生態系。
             </p>
-            <h3 class="text-2xl font-semibold text-dark-800 mb-4">促進創新應用</h3>
-            <p class="text-dark-700 leading-relaxed">
-              促進相關技術在各領域的創新應用，建構台灣在全球運算領域的競爭優勢，
-              為國家科技發展貢獻力量。
+            <p class="text-brand-secondary leading-relaxed mb-6">
+              <strong>我們的願景：</strong>讓更多人能夠在未來關鍵技術領域中，有機會學習、實作、參與，
+              進而成為推動台灣科技進步的核心力量。
             </p>
-          </div>
-          <div class="bg-cream-50 p-8 rounded-xl">
-            <h3 class="text-2xl font-semibold text-dark-800 mb-6">核心價值</h3>
-            <ul class="space-y-4">
-              <li class="flex items-start">
-                <div class="w-6 h-6 bg-primary-600 rounded-full flex-shrink-0 mt-1 mr-3"></div>
-                <div>
-                  <strong class="text-dark-800">創新</strong>
-                  <p class="text-dark-700">持續推動技術創新與應用發展</p>
-                </div>
-              </li>
-                <li class="flex items-start">
-                  <div class="w-6 h-6 bg-primary-500 rounded-full flex-shrink-0 mt-1 mr-3"></div>
-                  <div>
-                    <strong class="text-gray-900">教育</strong>
-                    <p class="text-gray-600">提供優質的教育培訓與學習資源</p>
-                  </div>
-                </li>
-                <li class="flex items-start">
-                  <div class="w-6 h-6 bg-primary-500 rounded-full flex-shrink-0 mt-1 mr-3"></div>
-                  <div>
-                    <strong class="text-gray-900">合作</strong>
-                    <p class="text-gray-600">促進學術界與產業界的深度合作</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
+            <p class="text-brand-secondary leading-relaxed mb-6">
+              我們相信教育是科技創新的根本，實作是連結學習與產業的橋樑。
+            </p>
+            <p class="text-brand-secondary leading-relaxed">
+              在這個快速演化的時代，我們希望打造的不僅是一門課，而是一種能夠持續學習、持續實踐、
+              持續成長的能力與文化。
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </Section>
 
     <!-- Board Members Section -->
-    <section id="board" class="py-16 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">理監事成員</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white rounded-xl p-6 text-center shadow-lg">
-              <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4"></div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">理事長</h3>
-              <p class="text-gray-600 mb-2">張教授</p>
-              <p class="text-sm text-gray-500">國立台灣大學資訊工程學系</p>
-            </div>
-            <div class="bg-white rounded-xl p-6 text-center shadow-lg">
-              <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4"></div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">副理事長</h3>
-              <p class="text-gray-600 mb-2">李教授</p>
-              <p class="text-sm text-gray-500">國立清華大學資訊工程學系</p>
-            </div>
-            <div class="bg-white rounded-xl p-6 text-center shadow-lg">
-              <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4"></div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">秘書長</h3>
-              <p class="text-gray-600 mb-2">王博士</p>
-              <p class="text-sm text-gray-500">中央研究院資訊科學研究所</p>
-            </div>
+    <Section id="board" background="light">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-primary mb-8 text-center">理監事成員</h2>
+        <p class="text-center text-brand-secondary mb-12">認識指導我們協會的理監事成員</p>
+        
+        <div class="bg-brand-surface rounded-xl shadow-lg overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="bg-brand-accent text-white">
+                <tr>
+                  <th class="px-6 py-4 text-left font-semibold">職位</th>
+                  <th class="px-6 py-4 text-left font-semibold">姓名</th>
+                  <th class="px-6 py-4 text-left font-semibold">服務單位</th>
+                  <th class="px-6 py-4 text-left font-semibold">專長領域</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-brand-border">
+                <tr class="hover:bg-brand-light transition-colors">
+                  <td class="px-6 py-4 font-semibold text-brand-primary">理事長</td>
+                  <td class="px-6 py-4 text-brand-secondary">張教授</td>
+                  <td class="px-6 py-4 text-brand-secondary">國立台灣大學資訊工程學系</td>
+                  <td class="px-6 py-4 text-brand-secondary">高效能運算、平行處理</td>
+                </tr>
+                <tr class="hover:bg-brand-light transition-colors">
+                  <td class="px-6 py-4 font-semibold text-brand-primary">副理事長</td>
+                  <td class="px-6 py-4 text-brand-secondary">李教授</td>
+                  <td class="px-6 py-4 text-brand-secondary">國立清華大學資訊工程學系</td>
+                  <td class="px-6 py-4 text-brand-secondary">分散式系統、雲端運算</td>
+                </tr>
+                <tr class="hover:bg-brand-light transition-colors">
+                  <td class="px-6 py-4 font-semibold text-brand-primary">秘書長</td>
+                  <td class="px-6 py-4 text-brand-secondary">王博士</td>
+                  <td class="px-6 py-4 text-brand-secondary">中央研究院資訊科學研究所</td>
+                  <td class="px-6 py-4 text-brand-secondary">機器學習、AI加速</td>
+                </tr>
+                <tr class="hover:bg-brand-light transition-colors">
+                  <td class="px-6 py-4 font-semibold text-brand-primary">理事</td>
+                  <td class="px-6 py-4 text-brand-secondary">陳教授</td>
+                  <td class="px-6 py-4 text-brand-secondary">國立成功大學電機工程學系</td>
+                  <td class="px-6 py-4 text-brand-secondary">IC設計、數位系統</td>
+                </tr>
+                <tr class="hover:bg-brand-light transition-colors">
+                  <td class="px-6 py-4 font-semibold text-brand-primary">理事</td>
+                  <td class="px-6 py-4 text-brand-secondary">林博士</td>
+                  <td class="px-6 py-4 text-brand-secondary">國家高速網路與計算中心</td>
+                  <td class="px-6 py-4 text-brand-secondary">超級電腦、網格運算</td>
+                </tr>
+                <tr class="hover:bg-brand-light transition-colors">
+                  <td class="px-6 py-4 font-semibold text-brand-primary">監事</td>
+                  <td class="px-6 py-4 text-brand-secondary">黃教授</td>
+                  <td class="px-6 py-4 text-brand-secondary">國立交通大學資訊工程學系</td>
+                  <td class="px-6 py-4 text-brand-secondary">嵌入式系統、物聯網</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-    </section>
+    </Section>
 
     <!-- History Section -->
-    <section id="history" class="py-16">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">發展歷程</h2>
-          <div class="space-y-8">
-            <div class="flex items-start">
-              <div class="flex-shrink-0 w-4 h-4 bg-primary-500 rounded-full mt-2 mr-6"></div>
-              <div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">2020年</h3>
-                <p class="text-gray-600">協會正式成立，開始推動台灣高效能運算教育發展</p>
+    <Section id="history" background="white">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-primary mb-8 text-center">我們的歷程</h2>
+        <p class="text-center text-brand-secondary mb-12">台灣高效能運算教育協會的故事</p>
+        
+        <div class="space-y-8">
+          <div class="bg-brand-light p-6 rounded-xl">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">協會成立</h3>
+            <p class="text-brand-secondary leading-relaxed">
+              台灣高效能運算教育協會正式成立，匯集學界與產業專家，共同推動高效能運算教育。
+            </p>
+          </div>
+          
+          <div class="bg-brand-surface border border-brand-border p-6 rounded-xl">
+            <h3 class="text-xl font-semibold text-brand-primary mb-4">理監事會議與會員大會</h3>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-4 h-4 bg-brand-accent rounded-full mt-2 mr-4"></div>
+                <div>
+                  <h4 class="font-semibold text-brand-primary mb-1">三月理監事會議</h4>
+                  <p class="text-brand-secondary">規劃今年年度執行目標</p>
+                </div>
               </div>
-            </div>
-            <div class="flex items-start">
-              <div class="flex-shrink-0 w-4 h-4 bg-primary-500 rounded-full mt-2 mr-6"></div>
-              <div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">2021年</h3>
-                <p class="text-gray-600">推出首個高效能運算認證課程，培育專業人才</p>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <div class="flex-shrink-0 w-4 h-4 bg-primary-500 rounded-full mt-2 mr-6"></div>
-              <div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">2022年</h3>
-                <p class="text-gray-600">啟動BlackBear開源專案，促進技術創新與分享</p>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <div class="flex-shrink-0 w-4 h-4 bg-primary-500 rounded-full mt-2 mr-6"></div>
-              <div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">2023年</h3>
-                <p class="text-gray-600">與國際知名大學建立合作關係，擴大影響力</p>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <div class="flex-shrink-0 w-4 h-4 bg-primary-500 rounded-full mt-2 mr-6"></div>
-              <div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">2024年</h3>
-                <p class="text-gray-600">推出ACALSim模擬平台，提供更完整的學習環境</p>
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-4 h-4 bg-brand-accent rounded-full mt-2 mr-4"></div>
+                <div>
+                  <h4 class="font-semibold text-brand-primary mb-1">六月會員大會</h4>
+                  <p class="text-brand-secondary">向會員報告今年年度計畫，預計擴大協會教育計畫，及尋找企業夥伴</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </Section>
 
     <!-- Annual Report Section -->
     <section id="annual-report" class="py-16 bg-gray-50">
