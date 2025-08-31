@@ -43,3 +43,6 @@ temp/
 # Design files and specs (exclude from version control)
 高效能運算協會設計圖.png
 edu-astro-spec.md
+
+# Test files
+src/pages/test-image.astro
