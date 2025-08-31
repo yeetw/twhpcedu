@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import { getCollection } from 'astro:content';
 
 // Get latest news articles (3 most recent)
@@ -239,4 +240,5 @@ function formatDate(date: Date): string {
       </div>
     </section>
   </main>
+  <Footer />
 </Layout>
