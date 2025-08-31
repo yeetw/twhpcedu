@@ -1,0 +1,43 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  backgroundImage?: string;
+}
+
+const { title, subtitle, backgroundImage } = Astro.props;
+---
+
+{backgroundImage ? (
+  <!-- Hero Section with Background Image -->
+  <section class="relative min-h-[60vh] bg-cover bg-center bg-no-repeat" style={`background-image: url('${backgroundImage}');`}>
+    <!-- Semi-transparent overlay -->
+    <div class="absolute inset-0 bg-dark-800 bg-opacity-70"></div>
+    
+    <!-- Hero content -->
+    <div class="relative z-10 flex items-center justify-center min-h-[60vh]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">{title}</h1>
+        {subtitle && (
+          <p class="text-xl md:text-2xl text-brand-light mb-8 max-w-4xl mx-auto">
+            {subtitle}
+          </p>
+        )}
+      </div>
+    </div>
+  </section>
+) : (
+  <!-- Gradient Hero with Dark to Orange transition -->
+  <section class="bg-gradient-to-r from-secondary-800 via-secondary-700 to-primary-600 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold mb-6">{title}</h1>
+        {subtitle && (
+          <p class="text-xl text-brand-light">
+            {subtitle}
+          </p>
+        )}
+      </div>
+    </div>
+  </section>
+)}

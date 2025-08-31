@@ -47,6 +47,16 @@ export default {
           700: '#29434e',
           800: '#3a3a3a',
           900: '#0f172a',
+        },
+        // Semantic brand colors for unified styling
+        brand: {
+          primary: '#3a3a3a',      // Main text color (dark-800)
+          secondary: '#29434e',    // Secondary text color (dark-700) 
+          light: '#FFF5E4',        // Light background (cream-50)
+          accent: '#CD5C08',       // Accent/CTA color (primary-600)
+          muted: '#94a3b8',        // Muted text (dark-400)
+          surface: '#ffffff',      // Card/surface background
+          border: '#e2e8f0',       // Border color (dark-200)
         }
       },
       fontFamily: {

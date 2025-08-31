@@ -1,0 +1,21 @@
+---
+export interface Props {
+  background?: 'white' | 'cream' | 'secondary' | 'cta';
+  class?: string;
+}
+
+const { background = 'white', class: className = '' } = Astro.props;
+
+const backgroundClasses = {
+  white: 'bg-white',
+  cream: 'bg-cream-50',
+  secondary: 'bg-secondary-200',
+  cta: 'bg-secondary-500 text-white'
+};
+---
+
+<section class={`py-16 ${backgroundClasses[background]} ${className}`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <slot />
+  </div>
+</section>

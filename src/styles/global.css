@@ -1,0 +1,92 @@
+/* Global Styles for TWHPCEdu Website */
+
+/* Custom line clamp for news cards */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Common component utility classes with responsive design */
+.card-base {
+  @apply bg-brand-surface rounded-lg md:rounded-xl shadow-lg;
+}
+
+.card-padding-sm {
+  @apply p-4 md:p-6;
+}
+
+.card-padding-md {
+  @apply p-6 md:p-8;
+}
+
+.card-padding-lg {
+  @apply p-8 md:p-12;
+}
+
+.icon-container-sm {
+  @apply w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center;
+}
+
+.icon-container-md {
+  @apply w-12 h-12 md:w-16 md:h-16 rounded-lg flex items-center justify-center;
+}
+
+.icon-container-lg {
+  @apply w-16 h-16 md:w-20 md:h-20 rounded-lg flex items-center justify-center;
+}
+
+.icon-primary {
+  @apply bg-primary-100 text-primary-600;
+}
+
+.icon-secondary {
+  @apply bg-secondary-100 text-secondary-600;
+}
+
+.icon-accent {
+  @apply bg-brand-light text-brand-accent;
+}
+
+.feature-list {
+  @apply space-y-2 text-sm md:text-base text-brand-secondary;
+}
+
+.feature-list-item {
+  @apply flex items-start;
+}
+
+.feature-bullet {
+  @apply w-2 h-2 bg-brand-accent rounded-full mt-2 mr-3 flex-shrink-0;
+}
+
+.section-title {
+  @apply text-2xl md:text-3xl font-bold text-brand-primary mb-8 md:mb-12 text-center;
+}
+
+.card-title {
+  @apply text-lg md:text-xl font-semibold text-brand-primary mb-3 md:mb-4;
+}
+
+.card-description {
+  @apply text-sm md:text-base text-brand-secondary;
+}
+
+/* Responsive grid utilities */
+.grid-responsive-cards {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8;
+}
+
+.grid-responsive-projects {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12;
+}
+
+/* Responsive button utilities */
+.btn-primary {
+  @apply bg-brand-accent hover:bg-primary-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg text-sm md:text-base font-semibold transition-colors;
+}
+
+.btn-primary-full {
+  @apply btn-primary w-full md:w-auto text-center;
+}
