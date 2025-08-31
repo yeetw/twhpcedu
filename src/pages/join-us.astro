@@ -1,0 +1,293 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="加入會員 | 台灣高效能運算教育協會">
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary-600 to-primary-700 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-4xl lg:text-5xl font-bold mb-6">加入會員</h1>
+          <p class="text-xl text-primary-100">
+            成為台灣高效能運算教育協會的一員，與我們一起推動技術創新與人才培育
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership Benefits -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">會員權益</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+              <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.832 18.477 19.246 18 17.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">專業課程優惠</h3>
+              <p class="text-gray-600">享有所有教育培訓課程的會員優惠價格，最高可享8折優惠</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+              <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">專業社群網絡</h3>
+              <p class="text-gray-600">加入專業社群，與業界專家和同儕建立聯繫，分享經驗與知識</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+              <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">優先活動參與</h3>
+              <p class="text-gray-600">優先報名參加研習營、研討會等各類專業活動</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+              <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">技術資源取得</h3>
+              <p class="text-gray-600">免費取得技術白皮書、研究報告等專業資源</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+              <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">研究合作機會</h3>
+              <p class="text-gray-600">參與協會研究專案，與學術界和產業界合作</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+              <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">專業認證支援</h3>
+              <p class="text-gray-600">獲得專業認證指導與支援，提升職業競爭力</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership Types -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">會員類型</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Individual Membership -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">個人會員</h3>
+              <div class="text-3xl font-bold text-primary-600 mb-6">
+                NT$ 2,000
+                <span class="text-lg font-normal text-gray-500">/年</span>
+              </div>
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">課程8折優惠</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">專業社群參與</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">技術資源下載</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">活動優先報名</span>
+                </li>
+              </ul>
+              <p class="text-sm text-gray-500 mb-6">適合個人學習者、研究生、工程師</p>
+            </div>
+
+            <!-- Corporate Membership -->
+            <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-primary-500 relative">
+              <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span class="bg-primary-500 text-white px-4 py-2 rounded-full text-sm font-semibold">推薦</span>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">企業會員</h3>
+              <div class="text-3xl font-bold text-primary-600 mb-6">
+                NT$ 20,000
+                <span class="text-lg font-normal text-gray-500">/年</span>
+              </div>
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">企業培訓方案</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">技術諮詢服務</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">合作研發機會</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">品牌曝光機會</span>
+                </li>
+              </ul>
+              <p class="text-sm text-gray-500 mb-6">適合企業、研究機構、學術單位</p>
+            </div>
+
+            <!-- Student Membership -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">學生會員</h3>
+              <div class="text-3xl font-bold text-primary-600 mb-6">
+                NT$ 500
+                <span class="text-lg font-normal text-gray-500">/年</span>
+              </div>
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">課程5折優惠</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">學習資源取得</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">實習機會媒合</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">職涯發展指導</span>
+                </li>
+              </ul>
+              <p class="text-sm text-gray-500 mb-6">適合大學生、研究生（需學生證明）</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">立即加入</h2>
+            <p class="text-lg text-gray-600">
+              填寫以下表單，我們將盡快與您聯繫完成入會手續
+            </p>
+          </div>
+
+          <!-- Google Form Embed -->
+          <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="text-center py-16 bg-gray-50 rounded-lg">
+              <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">會員申請表單</h3>
+              <p class="text-gray-600 mb-6">
+                請點擊下方按鈕填寫 Google 表單完成會員申請
+              </p>
+              <a 
+                href="https://forms.google.com/your-form-link" 
+                target="_blank"
+                class="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-block"
+              >
+                填寫申請表單
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 p-6 rounded-xl">
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">聯絡資訊</h3>
+              <div class="space-y-3">
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-gray-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                  <span class="text-gray-600">membership@acal.org.tw</span>
+                </div>
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-gray-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                  </svg>
+                  <span class="text-gray-600">+886-2-1234-5678</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-xl">
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">申請流程</h3>
+              <ol class="space-y-2 text-gray-600">
+                <li class="flex items-start">
+                  <span class="bg-primary-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold mr-3 mt-0.5">1</span>
+                  填寫線上申請表單
+                </li>
+                <li class="flex items-start">
+                  <span class="bg-primary-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold mr-3 mt-0.5">2</span>
+                  審核申請資料
+                </li>
+                <li class="flex items-start">
+                  <span class="bg-primary-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold mr-3 mt-0.5">3</span>
+                  繳交會員費用
+                </li>
+                <li class="flex items-start">
+                  <span class="bg-primary-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold mr-3 mt-0.5">4</span>
+                  正式成為會員
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

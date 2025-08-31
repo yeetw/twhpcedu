@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Get all news articles and sort by date (newest first)
+const allNews = await getCollection('news');
+const sortedNews = allNews.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+// Get featured article (first featured article or most recent)
+const featuredArticle = sortedNews.find(article => article.data.featured) || sortedNews[0];
+
+// Get other articles (excluding featured)
+const otherNews = sortedNews.filter(article => article.slug !== featuredArticle.slug);
+
+// Format date function
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
+// Get unique categories
+const categories = [...new Set(allNews.map(article => article.data.category))];
+---
+
+<Layout title="News & Updates - ACAL" description="Stay updated with the latest news, research breakthroughs, and announcements from the Association for Computing and Advanced Learning.">
+  <main class="min-h-screen bg-gray-50">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary-600 to-primary-700 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">News & Updates</h1>
+          <p class="text-xl text-primary-100 max-w-3xl mx-auto">
+            Stay informed about our latest research breakthroughs, educational initiatives, and community developments in high-performance computing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Article -->
+    {featuredArticle && (
+      <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="mb-8">
+            <span class="inline-block bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
+              Featured Article
+            </span>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Latest Highlights</h2>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="md:flex">
+              <div class="md:w-1/2">
+                {featuredArticle.data.image && (
+                  <img 
+                    src={featuredArticle.data.image} 
+                    alt={featuredArticle.data.title}
+                    class="w-full h-64 md:h-full object-cover"
+                  />
+                )}
+              </div>
+              <div class="md:w-1/2 p-8">
+                <div class="flex items-center mb-4">
+                  <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium capitalize">
+                    {featuredArticle.data.category}
+                  </span>
+                  <span class="text-gray-500 ml-4">{formatDate(featuredArticle.data.pubDate)}</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                  <a href={`/news/${featuredArticle.slug}`} class="hover:text-primary-600 transition-colors">
+                    {featuredArticle.data.title}
+                  </a>
+                </h3>
+                <p class="text-gray-600 mb-6">{featuredArticle.data.description}</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500">By {featuredArticle.data.author}</span>
+                  <a 
+                    href={`/news/${featuredArticle.slug}`}
+                    class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium"
+                  >
+                    Read More
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- News Categories Filter -->
+    <section class="py-8 bg-white border-b">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap gap-4 justify-center">
+          <button class="px-6 py-2 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-colors">
+            All News
+          </button>
+          {categories.map(category => (
+            <button class="px-6 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 transition-colors capitalize">
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- News Grid -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {otherNews.map((article) => (
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+              {article.data.image && (
+                <img 
+                  src={article.data.image} 
+                  alt={article.data.title}
+                  class="w-full h-48 object-cover"
+                />
+              )}
+              <div class="p-6">
+                <div class="flex items-center mb-3">
+                  <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium capitalize">
+                    {article.data.category}
+                  </span>
+                  <span class="text-gray-500 text-sm ml-auto">{formatDate(article.data.pubDate)}</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                  <a href={`/news/${article.slug}`} class="hover:text-primary-600 transition-colors">
+                    {article.data.title}
+                  </a>
+                </h3>
+                <p class="text-gray-600 mb-4 line-clamp-3">{article.data.description}</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500">By {article.data.author}</span>
+                  <a 
+                    href={`/news/${article.slug}`}
+                    class="text-primary-600 hover:text-primary-700 font-medium text-sm"
+                  >
+                    Read More →
+                  </a>
+                </div>
+                {article.data.tags.length > 0 && (
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    {article.data.tags.slice(0, 3).map(tag => (
+                      <span class="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="py-16 bg-primary-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Stay Updated</h2>
+        <p class="text-xl text-gray-600 mb-8">
+          Subscribe to our newsletter for the latest news, research updates, and educational opportunities.
+        </p>
+        <form class="max-w-md mx-auto flex gap-4">
+          <input 
+            type="email" 
+            placeholder="Enter your email address"
+            class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+          />
+          <button 
+            type="submit"
+            class="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium"
+          >
+            Subscribe
+          </button>
+        </form>
+        <p class="text-sm text-gray-500 mt-4">
+          We respect your privacy. Unsubscribe at any time.
+        </p>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

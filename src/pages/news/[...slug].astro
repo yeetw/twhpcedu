@@ -1,0 +1,237 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const newsEntries = await getCollection('news');
+  return newsEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// Format date function
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
+// Get related articles (same category, excluding current)
+const allNews = await getCollection('news');
+const relatedNews = allNews
+  .filter(article => 
+    article.data.category === entry.data.category && 
+    article.slug !== entry.slug
+  )
+  .slice(0, 3);
+---
+
+<Layout 
+  title={`${entry.data.title} - ACAL News`} 
+  description={entry.data.description}
+>
+  <main class="min-h-screen bg-gray-50">
+    <!-- Article Header -->
+    <section class="bg-white py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <div class="flex items-center justify-center gap-4 mb-6">
+            <span class="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium capitalize">
+              {entry.data.category}
+            </span>
+            <time class="text-gray-500">{formatDate(entry.data.pubDate)}</time>
+          </div>
+          
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            {entry.data.title}
+          </h1>
+          
+          <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            {entry.data.description}
+          </p>
+          
+          <div class="flex items-center justify-center gap-4 text-sm text-gray-500">
+            <span>By {entry.data.author}</span>
+            {entry.data.tags.length > 0 && (
+              <div class="flex gap-2">
+                {entry.data.tags.map(tag => (
+                  <span class="bg-gray-100 text-gray-600 px-2 py-1 rounded">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+        
+        {entry.data.image && (
+          <div class="mb-8">
+            <img 
+              src={entry.data.image} 
+              alt={entry.data.title}
+              class="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
+            />
+          </div>
+        )}
+      </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+          <div class="prose prose-lg max-w-none">
+            <Content />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Articles -->
+    {relatedNews.length > 0 && (
+      <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Related Articles</h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            {relatedNews.map((article) => (
+              <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                {article.data.image && (
+                  <img 
+                    src={article.data.image} 
+                    alt={article.data.title}
+                    class="w-full h-48 object-cover"
+                  />
+                )}
+                <div class="p-6">
+                  <div class="flex items-center mb-3">
+                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium capitalize">
+                      {article.data.category}
+                    </span>
+                    <span class="text-gray-500 text-sm ml-auto">{formatDate(article.data.pubDate)}</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">
+                    <a href={`/news/${article.slug}`} class="hover:text-primary-600 transition-colors">
+                      {article.data.title}
+                    </a>
+                  </h3>
+                  <p class="text-gray-600 mb-4 line-clamp-3">{article.data.description}</p>
+                  <a 
+                    href={`/news/${article.slug}`}
+                    class="text-primary-600 hover:text-primary-700 font-medium text-sm"
+                  >
+                    Read More →
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Back to News -->
+    <section class="py-8">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <a 
+          href="/news"
+          class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium"
+        >
+          <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Back to All News
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .prose {
+    color: #374151;
+  }
+  
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    color: #111827;
+    font-weight: 700;
+  }
+  
+  .prose h2 {
+    font-size: 1.875rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .prose h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .prose p {
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+  }
+  
+  .prose ul,
+  .prose ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  
+  .prose li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .prose strong {
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .prose a {
+    color: #ea580c;
+    text-decoration: underline;
+  }
+  
+  .prose a:hover {
+    color: #c2410c;
+  }
+  
+  .prose blockquote {
+    border-left: 4px solid #ea580c;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #6b7280;
+  }
+  
+  .prose code {
+    background-color: #f3f4f6;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+  }
+  
+  .prose pre {
+    background-color: #1f2937;
+    color: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  
+  .prose pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+</style>
