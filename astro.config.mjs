@@ -4,8 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://catcatcatcat.github.io',
-  base: '/twhpcedu',
+  site: 'https://twhpcedu.org',
   integrations: [
     tailwind(),
     sitemap()
