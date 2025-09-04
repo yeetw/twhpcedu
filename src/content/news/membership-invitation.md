@@ -5,7 +5,7 @@ pubDate: 2025-09-01
 author: "臺灣高效能運算教育協會"
 category: "education"
 featured: false
-image: "/images/a.jpeg"
+image: "/images/technology.jpeg"
 tags: ["高效能運算", "AI 晶片設計", "開源專案", "教育推廣"]
 ---
 

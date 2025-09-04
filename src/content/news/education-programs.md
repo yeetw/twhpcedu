@@ -5,7 +5,7 @@ pubDate: 2025-09-01
 author: "臺灣高效能運算教育協會"
 category: "education"
 featured: true
-image: "/images/a.jpeg"
+image: "/images/technology.jpeg"
 tags: ["HPC", "AI", "chip-design", "open-source", "education"]
 ---
 

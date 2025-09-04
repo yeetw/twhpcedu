@@ -5,7 +5,7 @@ pubDate: 2025-09-01
 author: "臺灣高效能運算教育協會"
 category: "announcement"
 featured: false
-image: "/images/a.jpeg"
+image: "/images/technology.jpeg"
 tags: ["高效能運算", "人才培育", "產學合作", "晶片設計"]
 ---
 
